@@ -79,11 +79,10 @@ $('#buscar').click(() => {
     type: 'GET',
     data: {},
     success: function (data) {
+      $('div.lista').empty();
       if (data == "") {
         alert('No hay residencias que coincidan con tu búsqueda.');
       } else {
-
-        $('div.lista').empty();
 
       data.forEach((element) => {
         $('div.lista').append(
