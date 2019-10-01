@@ -79,9 +79,11 @@ $('#buscar').click(() => {
     type: 'GET',
     data: {},
     success: function (data) {
-      if (data == "") alert('No hay residencias que coincidan con tu búsqueda.');
+      if (data == "") {
+        alert('No hay residencias que coincidan con tu búsqueda.');
+      } else {
 
-      $('div.lista').empty();
+        $('div.lista').empty();
 
       data.forEach((element) => {
         $('div.lista').append(
@@ -117,6 +119,7 @@ $('#buscar').click(() => {
           </div>`
         );
       });
+      }
     }
   });
 });
